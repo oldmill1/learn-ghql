@@ -1,3 +1,3 @@
 # learn-ghql
 
-Test test test
+See examples here: https://oldmill1.github.io/learn-ghql/#1
