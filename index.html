@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta charset="UTF-8">
+
+  <!-- Begin Jekyll SEO tag v2.5.0 -->
+  <title>Learn GHQL | Examples</title>
+  <meta name="generator" content="Jekyll v3.7.3" />
+  <meta property="og:title" content="Learn GHQL" />
+  <meta property="og:locale" content="en_US" />
+  <meta name="description" content="Learn GHQL" />
+  <meta property="og:description" content="Learn GHQL" />
+  <link rel="canonical" href="https://oldmill1.github.io/learn-ghql/" />
+  <meta property="og:url" content="https://oldmill1.github.io/learn-ghql/" />
+  <meta property="og:site_name" content="Learn GHQL" />
+  <script type="application/ld+json">
+    {
+      "name": "learn-ghql",
+      "description": "Learn GHQL",
+      "@type": "WebSite",
+      "url": "https://oldmill1.github.io/learn-ghql/",
+      "headline": "learn-ghql",
+      "@context": "http://schema.org"
+    }
+  </script>
+  <!-- End Jekyll SEO tag -->
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#157878">
+  <link rel="stylesheet" href="/learn-ghql/assets/css/style.css?v=0d8f4a7eeed06825bd8446586d4918af167fd736">
+</head>
+
+<body>
+  <section class="page-header">
+    <h1 class="project-name">GHQL</h1>
+    <h2 class="project-tagline">GraphQL HTML Query Language</h2>
+  </section>
+
+  <section class="main-content">
+    <div class="highlight">
+      <pre class="highlight"><code>Examples are embedded in CodePen. Some ad-blockers may block it.
+</code></pre>
+    </div>
+
+    <ol>
+      <li><a href="#1">Example 1: Display a value</a></li>
+      <li><a href="#2">Example 2: Display a nested value</a></li>
+      <li><a href="#3">Example 3: Customize Rendering</a></li>
+      <li><a href="#4">Example 4: Using Property Tags</a></li>
+      <li><a href="#5">Example 5: Filtering And Arrays</a></li>
+      <li><a href="#6">Example 6: Travel Checklist</a></li>
+    </ol>
+
+    <h2><span id="1">Example 1: Display a value</span></h2>
+
+    <p>Get a value from GraphQL and display it. Here, we're getting <code>name</code> from a Tour Dossier ("Karela Beaches & Backwaters") and displaying it using a div tag.</p>
+
+    GraphQL Response:
+    <pre><code>
+      name: 'Kerala Beaches & Backwaters'
+    </code></pre>
+
+    <p data-height="265" data-theme-id="light" data-slug-hash="KBQRyJ" data-default-tab="html,result" data-user="ankurtaxali" data-pen-title="GHQL Demo" class="codepen">See the Pen <a href="https://codepen.io/ankurtaxali/pen/KBQRyJ/">GHQL Demo</a> by Ankur Taxali (<a href="https://codepen.io/ankurtaxali">@ankurtaxali</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+
+    <h2><span id="2">Example 2: Display a nested value</span></h2>
+
+    <p>Sometimes the response will be nested inside an object. You can display it using the same way as you're used to.</p>
+
+    GraphQL Response:
+    <pre><code>
+      startAddress {
+        city: 'Kochi'
+      }
+    </code></pre>
+
+    <p data-height="265" data-theme-id="light" data-slug-hash="RBQJmm" data-default-tab="html,result" data-user="ankurtaxali" data-pen-title="GHQL Demo" class="codepen">See the Pen <a href="https://codepen.io/ankurtaxali/pen/RBQJmm/">GHQL Demo</a> by Ankur Taxali (<a href="https://codepen.io/ankurtaxali">@ankurtaxali</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+
+
+    <h2><span id="3">Example 3: Customize Rendering</span></h2>
+
+    <p>You can control where to display the response inside the div tag by using the <code>{value}</code> keyword. In this example, we can capitalize the start city by wrapping it in a span tag.</p>
+
+    <p data-height="265" data-theme-id="light" data-slug-hash="vadaGo" data-default-tab="html,result" data-user="ankurtaxali" data-pen-title="GHQL Demo" class="codepen">See the Pen <a href="https://codepen.io/ankurtaxali/pen/vadaGo/">GHQL Demo</a> by Ankur Taxali (<a href="https://codepen.io/ankurtaxali">@ankurtaxali</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+
+    <h2><span id="4">Example 4: Using Property Tags</code></span></h2>
+
+    <p>To make it easier to render values, you can use a special tag called a Property Tag: <code>{ghql:*}</code>.</p>
+
+    <p data-height="265" data-theme-id="light" data-slug-hash="rrJrwK" data-default-tab="html,result" data-user="ankurtaxali" data-pen-title="GHQL Demo" class="codepen">See the Pen <a href="https://codepen.io/ankurtaxali/pen/rrJrwK/">GHQL Demo</a> by Ankur Taxali (<a href="https://codepen.io/ankurtaxali">@ankurtaxali</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+
+    <h2><span id="5">Example 5: Filtering And Arrays</code></span></h2>
+
+    <p>In this example, we want to get the Canadian price from all the prices of the room who's name contains the word Standard.</p>
+
+    <pre>
+      advertisedDeparture: {
+        id: 20902,
+          rooms: [
+            {
+              code: 8 - 6,
+              name: Standard - Double,
+              prices: [
+                {
+                  currency: CAD,
+                  originalPrice: 1383.20,
+                  price: 1383.20
+                },
+                ...
+    </pre>
+
+    <p data-height="265" data-theme-id="light" data-slug-hash="GBQXgW" data-default-tab="html,result" data-user="ankurtaxali" data-pen-title="GHQL Demo" class="codepen">See the Pen <a href="https://codepen.io/ankurtaxali/pen/GBQXgW/">GHQL Demo</a> by Ankur Taxali (<a href="https://codepen.io/ankurtaxali">@ankurtaxali</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+
+    <h2><span id="6">Example 6: Travel Checklist</span></h2>
+
+    <p data-height="265" data-theme-id="light" data-slug-hash="VBQEMd" data-default-tab="html,result" data-user="ankurtaxali" data-pen-title="GHQL Demo" class="codepen">See the Pen <a href="https://codepen.io/ankurtaxali/pen/VBQEMd/">GHQL Demo</a> by Ankur Taxali (<a href="https://codepen.io/ankurtaxali">@ankurtaxali</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+
+    <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+    <footer class="site-footer">
+
+      <span class="site-footer-owner"><a href="https://github.com/oldmill1/learn-ghql">learn-ghql</a> is maintained by <a href="https://github.com/oldmill1">oldmill1</a>.</span>
+    </footer>
+  </section>
+
+</body>
+
+</html>
