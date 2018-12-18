@@ -1,138 +1,172 @@
 <!DOCTYPE html>
-<html lang="en-US">
-
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-
-  <!-- Begin Jekyll SEO tag v2.5.0 -->
-  <title>Learn GHQL | Examples</title>
-  <meta name="generator" content="Jekyll v3.7.3" />
-  <meta property="og:title" content="Learn GHQL" />
-  <meta property="og:locale" content="en_US" />
-  <meta name="description" content="Learn GHQL" />
-  <meta property="og:description" content="Learn GHQL" />
-  <link rel="canonical" href="https://oldmill1.github.io/learn-ghql/" />
-  <meta property="og:url" content="https://oldmill1.github.io/learn-ghql/" />
-  <meta property="og:site_name" content="Learn GHQL" />
-  <script type="application/ld+json">
-    {
-      "name": "learn-ghql",
-      "description": "Learn GHQL",
-      "@type": "WebSite",
-      "url": "https://oldmill1.github.io/learn-ghql/",
-      "headline": "learn-ghql",
-      "@context": "http://schema.org"
-    }
-  </script>
-  <!-- End Jekyll SEO tag -->
-
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#157878">
-  <link rel="stylesheet" href="/learn-ghql/assets/css/style.css?v=0d8f4a7eeed06825bd8446586d4918af167fd736">
+    <meta charset="utf-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="A front-end template that helps you build fast, modern mobile web apps." name="description">
+    <meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0" name="viewport">
+    <title>Learn GHQL: Examples and Code</title><!-- Add to homescreen for Chrome on Android -->
+    <meta content="yes" name="mobile-web-app-capable">
+    <link href="images/android-desktop.png" rel="icon" sizes="192x192"><!-- Add to homescreen for Safari on iOS -->
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="Learn GHQL: Examples and Code" name="apple-mobile-web-app-title">
+    <link href="images/ios-desktop.png" rel="apple-touch-icon-precomposed"><!-- Tile icon for Win8 (144x144 + tile color) -->
+    <meta content="images/touch/ms-touch-icon-144x144-precomposed.png" name="msapplication-TileImage">
+    <meta content="#3372DF" name="msapplication-TileColor">
+    <link href="images/favicon.png" rel="shortcut icon"><!-- SEO: If your mobile URL is different from the desktop URL, add a canonical link to the desktop page https://developers.google.com/webmasters/smartphone-sites/feature-phones -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://code.getmdl.io/1.3.0/material.deep_purple-pink.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    <style>
+        #view-source {
+            position: fixed;
+            display: block;
+            right: 0;
+            bottom: 0;
+            margin-right: 40px;
+            margin-bottom: 40px;
+            z-index: 900;
+        }
+    </style>
 </head>
+<body class="mdl-demo mdl-color--grey-100 mdl-color-text--grey-700 mdl-base">
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+        <header class="mdl-layout__header mdl-layout__header--scroll mdl-color--primary">
+            <div class="mdl-layout--large-screen-only mdl-layout__header-row"></div>
+            <div class="mdl-layout--large-screen-only mdl-layout__header-row">
+                <h3>Learn GHQL</h3>
+            </div>
+            <div class="mdl-layout--large-screen-only mdl-layout__header-row"></div>
+            <div class="mdl-layout__tab-bar mdl-js-ripple-effect mdl-color--primary-dark">
+                <a class="mdl-layout__tab is-active" href="#overview">Overview</a>
+                <a class="mdl-layout__tab" href="#features">Details</a>
+                <a class="mdl-layout__tab" href="#">View on Github</a>
+            </div>
+        </header>
+        <main class="mdl-layout__content">
+            <div class="mdl-layout__tab-panel is-active" id="overview">
+                <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+                    <div class="mdl-card mdl-cell mdl-cell--12-col">
+                        <div class="mdl-card__supporting-text">
+                            <h4>Example 1: Display a Value</h4>
+                            <p>Get a value from GraphQL and display it. Here, we're getting <code>name</code> from a Tour Dossier and displaying it using a div tag.</p>
 
-<body>
-  <section class="page-header">
-    <h1 class="project-name">GHQL</h1>
-    <h2 class="project-tagline">GraphQL HTML Query Language</h2>
-  </section>
+                            <h6>Query</h6>
+                            <pre><code>
+query query { tourDossier_id24553: tourDossier(id: 24553) { name }, }
+                            </code></pre>
 
-  <section class="main-content">
-    <div class="highlight">
-      <pre class="highlight"><code>Examples are embedded in CodePen. Some ad-blockers may block it.
-</code></pre>
+                            <h6>GraphQL Response</h6>
+                            <pre><code>
+{
+    "data": {
+        "tourDossier_id24553": {
+            "name": "Highlights of Sabah & Mt Kinabalu"
+        }
+    }
+}
+                            </code></pre>
+
+                            <p data-height="300" data-theme-id="35524" data-slug-hash="MZbLXz" data-default-tab="html,result" data-user="gadventures" data-pen-title="Selecting A Value with GHQL" class="codepen">See the Pen <a href="https://codepen.io/team/gadventures/pen/MZbLXz/">Selecting A Value with GHQL</a> by G Adventures Technology (<a href="https://codepen.io/gadventures">@gadventures</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+                        </div>
+                        <div class="mdl-card__actions">
+                            <a class="mdl-button" href="https://codepen.io/team/gadventures/pen/MZbLXz/">View on Codepen</a>
+                        </div>
+                    </div>
+                    <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right">
+                        <li class="mdl-menu__item">Lorem</li>
+                        <li class="mdl-menu__item">Ipsum</li>
+                        <li class="mdl-menu__item">Dolor</li>
+                    </ul>
+                </section>
+                <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+                    <div class="mdl-card mdl-cell mdl-cell--12-col">
+                        <div class="mdl-card__supporting-text">
+                            <h4>Example 2: Display a nested value</h4>
+                            <p>Sometimes the response will be nested inside an object. You can get it using JavaScript dot-notation.</p>
+
+                            <h6>Query</h6>
+                            <pre><code>
+{ tourDossier_id24553: tourDossier(id: 24553) { geography { region { name } }}, }
+                            </code></pre>
+
+                            <h6>GraphQL Response</h6>
+                            <pre><code>
+{
+  "data": {
+    "tourDossier_id24553": {
+      "geography": {
+        "region": {
+          "name": "Asia"
+        }
+      }
+    }
+  }
+}
+                            </code></pre>
+
+                            <p data-height="300" data-theme-id="35524" data-slug-hash="qLqGPe" data-default-tab="html,result" data-user="gadventures" data-pen-title="Selecting a Nested Value in GHQL" class="codepen">See the Pen <a href="https://codepen.io/team/gadventures/pen/qLqGPe/">Selecting a Nested Value in GHQL</a> by G Adventures Technology (<a href="https://codepen.io/gadventures">@gadventures</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+                            <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+                        </div>
+                        <div class="mdl-card__actions">
+                            <a class="mdl-button" href="https://codepen.io/team/gadventures/pen/qLqGPe/">View on Codepen</a>
+                        </div>
+                    </div>
+                </section>
+                <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+                    <div class="mdl-card mdl-cell mdl-cell--12-col">
+                        <div class="mdl-card__supporting-text">
+                            <h4>Example 3: Customize Rendering</h4>
+                            <p>You can control where to display the response inside the div tag by using the <code>{value}</code> keyword. In this example, we can wrap our value inside a span tag, which we can style using CSS</p>
+
+                            <p data-height="300" data-theme-id="35524" data-slug-hash="OrbYBj" data-default-tab="html,result" data-user="gadventures" data-pen-title="Customise Rendering in GHQL" class="codepen">See the Pen <a href="https://codepen.io/team/gadventures/pen/OrbYBj/">Customise Rendering in GHQL</a> by G Adventures Technology (<a href="https://codepen.io/gadventures">@gadventures</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+                            <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+                        </div>
+                        <div class="mdl-card__actions">
+                            <a class="mdl-button" href="https://codepen.io/team/gadventures/pen/qLqGPe/">View on Codepen</a>
+                        </div>
+                    </div>
+                </section>
+                <section class="section--footer mdl-color--white mdl-grid"></section>
+            </div>
+            <div class="mdl-layout__tab-panel" id="features">
+                <section class="section--center mdl-grid mdl-grid--no-spacing">
+                    <div class="mdl-cell mdl-cell--12-col">
+                        <h4>Features</h4>Minim duis incididunt est cillum est ex occaecat consectetur. Qui sint ut et qui nisi cupidatat. Reprehenderit nostrud proident officia exercitation anim et pariatur ex.
+                        <div class="toc" style="margin-left: 2em">
+                            <h4>Contents</h4><a href="#lorem1">Lorem ipsum</a> <a href="#lorem2">Lorem ipsum</a> <a href="#lorem3">Lorem ipsum</a> <a href="#lorem4">Lorem ipsum</a> <a href="#lorem5">Lorem ipsum</a>
+                        </div>
+                        <h5 id="lorem1">Lorem ipsum dolor sit amet</h5>Excepteur et pariatur officia veniam anim culpa cupidatat consequat ad velit culpa est non.
+                        <ul>
+                            <li>Nisi qui nisi duis commodo duis reprehenderit consequat velit aliquip.</li>
+                            <li>Dolor consectetur incididunt in ipsum laborum non et irure pariatur excepteur anim occaecat officia sint.</li>
+                            <li>Lorem labore proident officia excepteur do.</li>
+                        </ul>
+                        <p>Sit qui est voluptate proident minim cillum in aliquip cupidatat labore pariatur id tempor id. Proident occaecat occaecat sint mollit tempor duis dolor cillum anim. Dolore sunt ea mollit fugiat in aliqua consequat nostrud aliqua ut irure in dolore. Proident aliqua culpa sint sint exercitation. Non proident occaecat reprehenderit veniam et proident dolor id culpa ea tempor do dolor. Nulla adipisicing qui fugiat id dolor. Nostrud magna voluptate irure veniam veniam labore ipsum deserunt adipisicing laboris amet eu irure. Sunt dolore nisi velit sit id. Nostrud voluptate labore proident cupidatat enim amet Lorem officia magna excepteur occaecat eu qui. Exercitation culpa deserunt non et tempor et non.</p>
+                        <p>Do dolor eiusmod eu mollit dolore nostrud deserunt cillum irure esse sint irure fugiat exercitation. Magna sit voluptate id in tempor elit veniam enim cupidatat ea labore elit. Aliqua pariatur eu nulla labore magna dolore mollit occaecat sint commodo culpa. Eu non minim duis pariatur Lorem quis exercitation. Sunt qui ex incididunt sit anim incididunt sit elit ad officia id.</p>
+                        <p id="lorem2">Tempor voluptate ex consequat fugiat aliqua. Do sit et reprehenderit culpa deserunt culpa. Excepteur quis minim mollit irure nulla excepteur enim quis in laborum. Aliqua elit voluptate ad deserunt nulla reprehenderit adipisicing sint. Est in eiusmod exercitation esse commodo. Ea reprehenderit exercitation veniam adipisicing minim nostrud. Veniam dolore ex ea occaecat non enim minim id ut aliqua adipisicing ad. Occaecat excepteur aliqua tempor cupidatat aute dolore deserunt ipsum qui incididunt aliqua occaecat sit quis. Culpa sint aliqua aliqua reprehenderit veniam irure fugiat ea ad.</p>
+                        <p>Eu minim fugiat laborum irure veniam Lorem aliqua enim. Aliqua veniam incididunt consequat irure consequat tempor do nisi deserunt. Elit dolore ad quis consectetur sint laborum anim magna do nostrud amet. Ea nulla sit consequat quis qui irure dolor. Sint deserunt excepteur consectetur magna irure. Dolor tempor exercitation dolore pariatur incididunt ut laboris fugiat ipsum sunt veniam aute sunt labore. Non dolore sit nostrud eu ad excepteur cillum eu ex Lorem duis.</p>
+                        <p>Id occaecat velit non ipsum occaecat aliqua quis ut. Eiusmod est magna non esse est ex incididunt aute ullamco. Cillum excepteur sint ipsum qui quis velit incididunt amet. Qui deserunt anim enim laborum cillum reprehenderit duis mollit amet ad officia enim. Minim sint et quis aliqua aliqua do minim officia dolor deserunt ipsum laboris. Nulla nisi voluptate consectetur est voluptate et amet. Occaecat ut quis adipisicing ad enim. Magna est magna sit duis proident veniam reprehenderit fugiat reprehenderit enim velit ex. Ullamco laboris culpa irure aliquip ad Lorem consequat veniam ad ipsum eu. Ipsum culpa dolore sunt officia laborum quis.</p>
+                        <h5 id="lorem3">Lorem ipsum dolor sit amet</h5>
+                        <p id="lorem4">Eiusmod nulla aliquip ipsum reprehenderit nostrud non excepteur mollit amet esse est est dolor. Dolore quis pariatur sit consectetur veniam esse ullamco duis Lorem qui enim ut veniam. Officia deserunt minim duis laborum dolor in velit pariatur commodo ullamco eu. Aute adipisicing ad duis labore laboris do mollit dolor cillum sunt aliqua ullamco. Esse tempor quis cillum consequat reprehenderit. Adipisicing proident anim eu sint elit aliqua anim dolore cupidatat fugiat aliquip qui.</p>
+                        <p id="lorem5">Nisi eiusmod esse cupidatat excepteur exercitation ipsum reprehenderit nostrud deserunt aliqua ullamco. Anim est irure commodo eiusmod pariatur officia. Est dolor ipsum excepteur magna aliqua ad veniam irure qui occaecat eiusmod aute fugiat commodo. Quis mollit incididunt amet sit minim velit eu fugiat voluptate excepteur. Sit minim id pariatur ex cupidatat cupidatat nostrud nostrud ipsum.</p>
+                        <p>Enim ea officia excepteur ad veniam id reprehenderit eiusmod esse mollit consequat. Esse non aute ullamco Lorem aliqua qui dolore irure eiusmod aute aliqua proident labore aliqua. Ipsum voluptate voluptate exercitation laborum deserunt nulla elit aliquip et minim ex veniam. Duis cupidatat aute sunt officia mollit dolor ad elit ad aute labore nostrud duis pariatur. In est sint voluptate consectetur velit ea non labore. Ut duis ea aliqua consequat nulla laboris fugiat aute id culpa proident. Minim eiusmod laboris enim Lorem nisi excepteur mollit voluptate enim labore reprehenderit officia mollit.</p>
+                        <p>Cupidatat labore nisi ut sunt voluptate quis sunt qui ad Lorem esse nisi. Ex esse velit ullamco incididunt occaecat dolore veniam tempor minim adipisicing amet. Consequat in exercitation est elit anim consequat cillum sint labore cillum. Aliquip mollit laboris ad labore anim.</p>
+                    </div>
+                </section>
+            </div>
+            <footer class="mdl-mega-footer">
+                <div class="mdl-mega-footer--bottom-section">
+                    <div class="mdl-logo">Created with Love by G Adventures</div>
+                </div>
+            </footer>
+        </main>
     </div>
 
-    <ol>
-      <li><a href="#1">Example 1: Display a value</a></li>
-      <li><a href="#2">Example 2: Display a nested value</a></li>
-      <li><a href="#3">Example 3: Customize Rendering</a></li>
-      <li><a href="#4">Example 4: Using Property Tags</a></li>
-      <li><a href="#5">Example 5: Filtering And Arrays</a></li>
-      <li><a href="#6">Example 6: Travel Checklist</a></li>
-      <!-- <li><a href="#7">Example 6: Travel Checklist</a></li> -->
-
-    </ol>
-
-    <p>Down for maintainence.</p>
-
-    <!-- <h2><span id="1">Example 1: Display a value</span></h2>
-
-    <p>Get a value from GraphQL and display it. Here, we're getting <code>name</code> from a Tour Dossier ("Kerala Beaches & Backwaters") and displaying it using a div tag.</p>
-
-    GraphQL Response:
-    <pre><code>
-      name: 'Kerala Beaches & Backwaters'
-    </code></pre>
-
-    <p data-height="265" data-theme-id="dark" data-slug-hash="ajqGqd" data-default-tab="html,result" data-user="ankurtaxali" data-pen-title="GHQL Example 1" data-editable="true" class="codepen">See the Pen <a href="https://codepen.io/ankurtaxali/pen/ajqGqd/">GHQL Example 1</a> by Ankur Taxali (<a href="https://codepen.io/ankurtaxali">@ankurtaxali</a>) on <a href="https://codepen.io">CodePen</a>.</p>
-    <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
-
-    <h2><span id="2">Example 2: Display a nested value</span></h2>
-
-    <p>Sometimes the response will be nested inside an object. You can display it using the same way as you're used to.</p>
-
-    GraphQL Response:
-    <pre><code>
-      startAddress {
-        city: 'Kochi'
-      }
-    </code></pre>
-
-    <p data-height="265" data-theme-id="dark" data-slug-hash="NLOvRp" data-default-tab="html,result" data-user="ankurtaxali" data-pen-title="GHQL Example 1" data-editable="true" class="codepen">See the Pen <a href="https://codepen.io/ankurtaxali/pen/NLOvRp/">GHQL Example 1</a> by Ankur Taxali (<a href="https://codepen.io/ankurtaxali">@ankurtaxali</a>) on <a href="https://codepen.io">CodePen</a>.</p>
-    <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
-
-    <h2><span id="3">Example 3: Customize Rendering</span></h2>
-
-    <p>You can control where to display the response inside the div tag by using the <code>{value}</code> keyword. In this example, we can capitalize the start city by wrapping it in a span tag.</p>
-
-    <p data-height="265" data-theme-id="dark" data-slug-hash="KxGvay" data-default-tab="html,result" data-user="ankurtaxali" data-pen-title="GHQL Example 3" data-editable="true" class="codepen">See the Pen <a href="https://codepen.io/ankurtaxali/pen/KxGvay/">GHQL Example 3</a> by Ankur Taxali (<a href="https://codepen.io/ankurtaxali">@ankurtaxali</a>) on <a href="https://codepen.io">CodePen</a>.</p>
-    <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
-
-    <h2><span id="4">Example 4: Using Property Tags</code></span></h2>
-
-    <p>To make it easier to render values, you can use a special tag called a Property Tag: <code>{ghql:*}</code>.</p>
-
-    <p data-height="265" data-theme-id="dark" data-slug-hash="wEYqJg" data-default-tab="html,result" data-user="ankurtaxali" data-pen-title="GHQL Example 5" data-editable="true" class="codepen">See the Pen <a href="https://codepen.io/ankurtaxali/pen/wEYqJg/">GHQL Example 5</a> by Ankur Taxali (<a href="https://codepen.io/ankurtaxali">@ankurtaxali</a>) on <a href="https://codepen.io">CodePen</a>.</p>
-<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
-
-    <h2><span id="5">Example 5: Filtering And Arrays</code></span></h2>
-
-    <p>In this example, we want to get the Canadian price from all the prices of the room who's name contains the word Standard.</p>
-
-    <pre>
-      advertisedDeparture: {
-        id: 20902,
-          rooms: [
-            {
-              code: 8 - 6,
-              name: Standard - Double,
-              prices: [
-                {
-                  currency: CAD,
-                  originalPrice: 1383.20,
-                  price: 1383.20
-                },
-                ...
-    </pre>
-
-    <p data-height="265" data-theme-id="dark" data-slug-hash="EedvmG" data-default-tab="html,result" data-user="ankurtaxali" data-pen-title="GHQL Example 6" data-editable="true" class="codepen">See the Pen <a href="https://codepen.io/ankurtaxali/pen/EedvmG/">GHQL Example 6</a> by Ankur Taxali (<a href="https://codepen.io/ankurtaxali">@ankurtaxali</a>) on <a href="https://codepen.io">CodePen</a>.</p>
-    <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
-
-    <h2><span id="6">Example 6: Travel Checklist</span></h2>
-
-    <p data-height="265" data-theme-id="dark" data-slug-hash="OoBjYx" data-default-tab="html,result" data-user="ankurtaxali" data-pen-title="GHQL Example 7" data-editable="true" class="codepen">See the Pen <a href="https://codepen.io/ankurtaxali/pen/OoBjYx/">GHQL Example 7</a> by Ankur Taxali (<a href="https://codepen.io/ankurtaxali">@ankurtaxali</a>) on <a href="https://codepen.io">CodePen</a>.</p>
-    <script async src="https://static.codepen.io/assets/embed/ei.js"></script> -->
-
-    <!-- <h2><span id="7">Example 7: Search Resources</span></h2>
-
-    <p data-height="265" data-theme-id="light" data-slug-hash="VBQEMd" data-default-tab="css,result" data-user="ankurtaxali" data-pen-title="GHQL Demo" class="codepen">See the Pen <a href="https://codepen.io/ankurtaxali/pen/VBQEMd/">GHQL Demo</a> by Ankur Taxali (<a href="https://codepen.io/ankurtaxali">@ankurtaxali</a>) on <a href="https://codepen.io">CodePen</a>.</p> -->
-
-    <footer class="site-footer">
-      <span class="site-footer-owner"><a href="https://github.com/oldmill1/learn-ghql">learn-ghql</a> is maintained by <a href="https://github.com/oldmill1">oldmill1</a>.</span>
-    </footer>
-  </section>
-
+    <a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--accent mdl-color-text--accent-contrast" href="#" id="view-source" target="_blank">View on Github</a>
+    <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
 </body>
-
 </html>
